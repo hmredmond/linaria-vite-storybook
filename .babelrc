@@ -1,0 +1,11 @@
+{
+    "comments": false,
+    "presets": [["@babel/env", {
+      "shippedProposals": true
+    }], "@babel/preset-react"],
+    "plugins": [
+      [
+        "inline-react-svg"
+      ]
+    ]
+  }

@@ -2,22 +2,32 @@
   "name": "vite-storybook-linaria",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "source": "src/index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "rollup -c -w",
+    "build": "NODE_ENV=production rollup -c",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.22.15",
     "@callstack/react-theme-provider": "^3.0.9",
     "@linaria/core": "^5.0.1",
     "@linaria/react": "^5.0.1",
     "@linaria/vite": "^5.0.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "babel-plugin-inline-react-svg": "^2.0.2",
+    "react": "^18.2.0 || ^17.0.1 || ^16.14.0",
+    "react-dom": "^18.2.0 || ^17.0.1 || ^16.14.0",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.4.5",
@@ -37,7 +47,26 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-storybook": "^0.6.14",
     "prop-types": "^15.8.1",
+    "rollup": "^2.68.0",
     "storybook": "^7.4.5",
     "vite": "^4.4.5"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^18.2.0 || ^17.0.1 || ^16.14.0",
+    "react-dom": "^18.2.0 || ^17.0.1 || ^16.14.0",
+    "react-lottie-player": "^1.4.3",
+    "styled-components": "^v5.3.1"
+  },
+  "peerDependenciesMeta": {
+    "prop-types": {
+      "optional": true
+    },
+    "react-lottie-player": {
+      "optional": true
+    },
+    "styled-components": {
+      "optional": true
+    }
   }
 }

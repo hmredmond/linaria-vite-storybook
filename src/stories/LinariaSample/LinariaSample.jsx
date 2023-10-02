@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { DarkTheme, LightTheme, ThemeProvider } from '../theming';
-import {  WithThemeStyled } from './Linaria.styles';
-
-
-
-
+import React, { useState } from 'react';
+import { DarkTheme, LightTheme, ThemeProvider } from '../../theming';
+import {  WithThemeStyled } from './LinariaSample.styles';
 
 const ThemedLinaria =  () => {
     const [theme, setTheme] = useState();
-
     return (
         <ThemeProvider theme={theme}>
             <WithThemeStyled>Themed content </WithThemeStyled>
@@ -20,15 +15,12 @@ const ThemedLinaria =  () => {
 /**
  * Primary UI component for user interaction
  */
-export const Linaria = () => {
-  
+export const LinariaSample = () => {
   return (
     <ThemeProvider>
       <ThemedLinaria/>
-    
     </ThemeProvider>
-  
  );
 };
 
-export default Linaria;
+export default LinariaSample;

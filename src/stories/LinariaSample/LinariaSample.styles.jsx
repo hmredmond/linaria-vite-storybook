@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@linaria/react';
-import { withTheme } from '../theming';
+import { withTheme } from '../../theming';
 
 // THIS IS WHAT WE WANT TO USE
 export const WithThemeStyled = withTheme(styled.h1`
