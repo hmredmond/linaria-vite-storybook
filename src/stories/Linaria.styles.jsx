@@ -1,6 +1,5 @@
 import React from 'react';
 import { styled } from '@linaria/react';
-import { theming } from './theme.helper';
 import { withTheme } from '../theming';
 
 // THIS IS WHAT WE WANT TO USE
