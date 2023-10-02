@@ -4,8 +4,9 @@ import { withTheme } from '../../theming';
 
 // THIS IS WHAT WE WANT TO USE
 export const WithThemeStyled = withTheme(styled.h1`
- background-color:  ${({theme}) => theme.canvas.primary.main};
- color: ${({theme}) => theme.canvas.primary.ink};
+ border: 10px solid ${({theme}) => theme.colours.brand.main};
+ background-color: ${({theme}) => theme.colours.canvas.primary.main};
+ color: ${({theme}) => theme.colours.canvas.primary.ink};
 `);
 
 // OTHER EXAMPLES< BUT NEED PROPS PASSED IN FROM THE COMPONENT

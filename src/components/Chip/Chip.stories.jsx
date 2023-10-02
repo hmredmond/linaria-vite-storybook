@@ -31,7 +31,7 @@ const Template = (props) => {
   return (
     <div
       style={{
-        backgroundColor: theme.canvas.secondary.main,
+        backgroundColor: theme.colours.canvas.secondary.main,
         padding: '1rem',
       }}
     >
