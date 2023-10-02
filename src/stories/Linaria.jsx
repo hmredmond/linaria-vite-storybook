@@ -1,39 +1,21 @@
-import React, { useState } from 'react';
-import { ThemeProvider, useTheme, withTheme } from '../theming';
-import { TitleTag, TitleThemed, WithTitleThemed, WithTitleThemedProps, WithTitleThemedTheme, title } from './Linaria.styles';
+import React, { useEffect, useState } from 'react';
+import { DarkTheme, LightTheme, ThemeProvider } from '../theming';
+import {  WithThemeStyled } from './Linaria.styles';
 
 
 
-const ButtonX = withTheme(({ theme }) => (
-    <div style={{ color: theme.secondaryColor }}>Click me</div>
-  ));
 
 
+const ThemedLinaria =  () => {
+    const [theme, setTheme] = useState();
 
-const ThemedLinaria = withTheme( (props) => {
-    const [xtheme, setTheme] = useState('light');
-
-    const themeX = useTheme();
-
-
-return (
-    <div className={`theme-${xtheme}`}>
-    <TitleTag>Yo world, s'up</TitleTag>
-    <h1 className={title}>Hello</h1>
-    <TitleThemed >Themed</TitleThemed>
-
-    <ButtonX>asdads</ButtonX>
-    
-    <WithTitleThemed {...props.theme}>Props.theme</WithTitleThemed> 
-    <WithTitleThemedProps {...props}>...props</WithTitleThemedProps> 
-
-    <WithTitleThemedTheme theme={themeX}>theme</WithTitleThemedTheme> 
-    
-    <button onClick={() => setTheme(xtheme ==='light' ? 'dark': 'light')}>toggle theme</button>
-    </div>
-)
-
-})
+    return (
+        <ThemeProvider theme={theme}>
+            <WithThemeStyled>Themed content </WithThemeStyled>
+            <button onClick={() => setTheme(theme ===LightTheme ? DarkTheme: LightTheme)}>toggle theme</button>
+        </ThemeProvider>
+    )
+}
 
 /**
  * Primary UI component for user interaction

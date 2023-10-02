@@ -1,43 +1,22 @@
 import React from 'react';
-import { css } from '@linaria/core';
 import { styled } from '@linaria/react';
 import { theming } from './theme.helper';
+import { withTheme } from '../theming';
 
+// THIS IS WHAT WE WANT TO USE
+export const WithThemeStyled = withTheme(styled.h1`
+ background-color:  ${({theme}) => theme.canvas.primary.main};
+ color: ${({theme}) => theme.canvas.primary.ink};
+`);
 
+// OTHER EXAMPLES< BUT NEED PROPS PASSED IN FROM THE COMPONENT
   // Use the helper in your styles
-  export const TitleThemed = styled.h1`
-    text-transform: uppercase;
+//   export const TitleThemed = styled.h1`
+//     text-transform: uppercase;
   
-    ${theming(c => ({
-      color: c.text,
-      backgroundColor: c.bg
-    }))};
-  `;
+//     ${theming(c => ({
+//       color: c.text,
+//       backgroundColor: c.bg
+//     }))};
+//   `;
 
-  export const WithTitleThemed = styled.h1`
-  color : ${(props) => props.secondaryColor };
-  text-transform: uppercase;
-
-`;
-export const WithTitleThemedProps = styled.h1`
-color : ${({theme}) => theme.secondaryColor };
-text-transform: uppercase;
-
-`;
-
-export const WithTitleThemedTheme = styled.h1`
-color : ${({theme}) => theme.secondaryColor };
-text-transform: uppercase;
-
-`;
-export const title = css`
-  font-size: 24px;
-  font-weight: bold;
-  color:red;
-`;
-
-export const TitleTag = styled.h1`
-  font-size: 24px;
-  font-weight: bold;
-  color:blue;
-`;
